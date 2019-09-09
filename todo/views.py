@@ -30,3 +30,8 @@ def todoComplete(request,todo_id):
 	todo.save()
 
 	return redirect('index')
+
+def deleteCompleted(request):
+	Todo.objects.filter(completed = True).delete()
+
+	return redirect('index')
